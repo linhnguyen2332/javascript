@@ -5,20 +5,21 @@
  */
 function findLongestIncreasingSequenceLength(numbers) {
     let maxLength = 0;
-    let currentLength = 0;
+    let currentLength = 1;
 
     numbers.reduce((previousNumber, currentNumber) => {
-        if (currentNumber > previousNumber) {
+        if (currentNumber - 1 === previousNumber) {
             currentLength++;
-        } else {
             maxLength = Math.max(maxLength, currentLength);
+        } else {
+            
             currentLength = 1;
         }
 
         return currentNumber;
     });
 
-    maxLength = Math.max(maxLength, currentLength);
+    // maxLength = Math.max(maxLength, currentLength);
     return maxLength;
 }
 
