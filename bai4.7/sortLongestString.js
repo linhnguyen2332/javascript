@@ -4,24 +4,24 @@
  * @returns 
  */
 
-function sortLongestString(strings) {
-    const stringWordCountMap = new Map();
-    strings.forEach((string) => {
-        const words = string.split(' ');
-        const uniqueWordCount = new Set(words).size;
-        stringWordCountMap.set(string, uniqueWordCount);
-    });
+function sortStringsByDistinctWordCount(strings) {
+  const stringWordCountMap = new Map();
+  strings.forEach((string) => {
+    const words = string.split(" ");
+    const uniqueWordCount = new Set(words).size;
+    stringWordCountMap.set(string, uniqueWordCount);
+  });
 
-    const sortedStrings = [...strings].sort((a, b) => {
-        const countA = stringWordCountMap.get(a);
-        const countB = stringWordCountMap.get(b);
-        if (countA === countB) {
-            return a.length - b.length;
-        }
-        return countB - countA;
-    });
+  const sortedStrings = [...strings].sort((a, b) => {
+    const countA = stringWordCountMap.get(a);
+    const countB = stringWordCountMap.get(b);
+    if (countA === countB) {
+      return a.length - b.length;
+    }
+    return countB - countA;
+  });
 
-    return sortedStrings;
+  return sortedStrings;
 }
 
-module.exports = sortLongestString
+module.exports = sortStringsByDistinctWordCount;
