@@ -4,7 +4,7 @@
  *  @param {array} list2
  */
 
-function findMedian(list1, list2) {
+function findMedianOfCombinedList(list1, list2) {
     const combinedList = [...list1, ...list2];
 
     combinedList.sort((a, b) => a - b);
@@ -19,4 +19,4 @@ function findMedian(list1, list2) {
     }
 }
 
-module.exports = findMedian
+module.exports = findMedianOfCombinedList;
