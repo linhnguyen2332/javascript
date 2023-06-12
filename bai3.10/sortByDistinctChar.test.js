@@ -1,8 +1,8 @@
-const sortShortestString = require("./sortByDistinctChar");
+const sortByDistinctChar = require("./sortByDistinctChar");
 
 test("sort chuỗi theo độ dài tăng dần ", () => {
     expect(
-        sortShortestString([
+        sortByDistinctChar([
             "French bread",
             "wrap",
             "pastry",
@@ -28,13 +28,13 @@ test("sort chuỗi theo độ dài tăng dần ", () => {
 
 test("sort chuỗi theo độ dài tăng dần ", () => {
     expect(
-        sortShortestString(["apple", "banana", "orange", "kiwi", "strawberry"])
+        sortByDistinctChar(["apple", "banana", "orange", "kiwi", "strawberry"])
     ).toEqual(["kiwi", "apple", "banana", "orange", "strawberry"]);
 });
 
 test("sort chuỗi theo độ dài tăng dần ", () => {
     expect(
-        sortShortestString([
+        sortByDistinctChar([
             "dog",
             "monkey",
             "cat",
@@ -48,7 +48,7 @@ test("sort chuỗi theo độ dài tăng dần ", () => {
 
 test("sort chuỗi theo độ dài tăng dần ", () => {
     expect(
-        sortShortestString([
+        sortByDistinctChar([
             "violet",
             "red",
             "blue",
@@ -62,7 +62,7 @@ test("sort chuỗi theo độ dài tăng dần ", () => {
 
 test("sort chuỗi theo độ dài tăng dần ", () => {
     expect(
-        sortShortestString([
+        sortByDistinctChar([
             "coca cola",
             "pesi",
             "orange juice",
