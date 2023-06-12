@@ -3,20 +3,21 @@
  * @param {array} numbers
  *
  */
-function findSecondSmallest(numbers) {
+
+function findsecondSmallestNumber(numbers) {
     let smallest = Infinity;
-    let secondSmallest = Infinity;
+    let secondSmallestNumber = Infinity;
 
     for (let i = 0; i < numbers.length; i++) {
         if (numbers[i] < smallest) {
-            secondSmallest = smallest;
+            secondSmallestNumber = smallest;
             smallest = numbers[i];
-        } else if (numbers[i] > smallest && numbers[i] < secondSmallest) {
-            secondSmallest = numbers[i];
+        } else if (numbers[i] > smallest && numbers[i] < secondSmallestNumber) {
+            secondSmallestNumber = numbers[i];
         }
     }
 
-    return secondSmallest;
+    return secondSmallestNumber;
 }
 
-module.exports = findSecondSmallest
+module.exports = findsecondSmallestNumber;
