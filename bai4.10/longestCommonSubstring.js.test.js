@@ -1,4 +1,4 @@
-const check = require('./longestCommonSubstring')
+const longestCommonSubString = require('./longestCommonSubstring')
 test('Find longest common substring', ()=>{
-    expect(check(['abcdef', 'abczyzcdef'], 2)).toEqual('ef')
+    expect(longestCommonSubString(['abcdef', 'abczyzcdef'], 2)).toEqual('ef')
 })

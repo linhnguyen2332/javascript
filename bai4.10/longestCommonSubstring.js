@@ -7,21 +7,23 @@
 
 
 function findLongestCommonSubstring(strings, k) {
-    let longestSubstring = '';
-    let maxLength = k;
+  let longestCommonSubString = "";
+  let maxLength = k;
 
-    for (let i = 0; i < strings.length - 1; i++) {
-        for (let j = i + 1; j < strings.length; j++) {
-            for (let m = 0; m <= strings[i].length - maxLength; m++) {
-                const substring = strings[i].substring(m, m + maxLength);
-                if (strings[j].includes(substring)) {
-                    longestSubstring = substring;
-                    maxLength = substring.length;
-                }
-            }
+  strings.forEach((str1, index1) => {
+    strings.slice(index1 + 1).forEach((str2) => {
+      str1.split("").reduce((substring, char) => {
+        const newSubstring = substring + char;
+        if (str2.includes(newSubstring) && newSubstring.length > maxLength) {
+          longestCommonSubString = newSubstring;
+          maxLength = newSubstring.length;
         }
-    }
+        return newSubstring;
+      }, "");
+    });
+  });
 
-    return longestSubstring
+  return longestCommonSubString;
 }
+
 module.exports = findLongestCommonSubstring
