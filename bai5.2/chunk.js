@@ -5,7 +5,7 @@
  * @returns 
  */
 
-function remakeChunk(array, target) {
+function chunkArray(array, target) {
     if (target <= 0) return [array];
     const numberArray = Math.floor(array.length / target);
     const remainder = array.length % target;
@@ -17,7 +17,7 @@ function remakeChunk(array, target) {
         chunks.push(array.slice(startIndex, endIndex));
         startIndex = endIndex;
     }
-    return chunks;
+    return chunks; 
 }
 
-module.exports = remakeChunk;
+module.exports = chunkArray;
