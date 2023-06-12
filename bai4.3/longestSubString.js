@@ -5,31 +5,28 @@
  */
 
 function findLongestSubstring(strings) {
-    let longestSubstring = '';
+  let longestSubstring = "";
 
-    for (let i = 0; i < strings.length; i++) {
-        const currentString = strings[i];
+  strings.forEach((currentString) => {
+    currentString.split("").forEach((char, index) => {
+      let substring = char;
 
-        for (let j = 0; j < currentString.length; j++) {
-            for (let k = j + 1; k <= currentString.length; k++) {
-                const substring = currentString.slice(j, k);
-                let isSubstringPresentInAllStrings = true;
-
-                for (let m = 0; m < strings.length; m++) {
-                    if (strings[m].indexOf(substring) === -1) {
-                        isSubstringPresentInAllStrings = false;
-                        break;
-                    }
-                }
-
-                if (isSubstringPresentInAllStrings && substring.length > longestSubstring.length) {
-                    longestSubstring = substring;
-                }
-            }
+      while (strings.every((str) => str.includes(substring))) {
+        const nextChar = currentString[index + substring.length];
+        if (nextChar) {
+          substring += nextChar;
+        } else {
+          break;
         }
-    }
+      }
 
-    return longestSubstring.length;
+      if (substring.length > longestSubstring.length) {
+        longestSubstring = substring;
+      }
+    });
+  });
+
+  return longestSubstring.length;
 }
 
 module.exports = findLongestSubstring
