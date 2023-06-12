@@ -2,7 +2,7 @@
  * reverses: Cho đầu vào là 1 mảng, Viết một function để đảo ngược thứ tự phần tử trong mảng , yêu cầu không dùng hàm Reverses có sẵn của javascrip
  * @param {array} arr 
  */
-function reverseArray(arr) {
+function reverseElenmentsArray(arr) {
     const reversed = [];
     arr.forEach((element) => {
         reversed.unshift(element);
@@ -10,4 +10,4 @@ function reverseArray(arr) {
     return reversed;
 }
 
-module.exports = reverseArray;
+module.exports = reverseElenmentsArray;
